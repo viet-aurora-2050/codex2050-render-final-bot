@@ -1,14 +1,10 @@
+
 services:
   - type: web
-    name: codex2050-render-final
+    name: codex2050
     env: python
-    plan: starter
-    region: frankfurt
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "python main.py"
-    autoDeploy: true
+    buildCommand: ""
+    startCommand: "python app.py"
     envVars:
-      - key: TELEGRAM_TOKEN
-        sync: false
-      - key: WEBHOOK_URL
-        sync: false
+      - key: FLASK_ENV
+        value: production
